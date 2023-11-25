@@ -1,0 +1,15 @@
+const jwt = require("jsonwebtoken");
+
+const verifyToken = (req, res, next) => {
+  const token = req.cookies.access_token;
+  if (!token) return next(errorHandler(401, "Unauthorised"));
+
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) return new (errorHandler(403, "Forbidden"))();
+
+    req.user = user;
+    next();
+  });
+};
+
+module.exports = verifyToken;
