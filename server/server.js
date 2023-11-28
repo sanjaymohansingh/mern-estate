@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
 const userRouter = require("./routes/userRoute");
 const authRouter = require("./routes/authRoute");
+const listingRouter = require("./routes/listingRoute");
 const cookieParser = require("cookie-parser");
 
 mongoose
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/listing", listingRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
