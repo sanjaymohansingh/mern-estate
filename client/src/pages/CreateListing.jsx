@@ -32,7 +32,7 @@ export default function CreateListing() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   console.log(formData);
-  const handleImageSubmit = () => {
+  const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
       setImageUploadError(false);
@@ -272,7 +272,7 @@ export default function CreateListing() {
               <input
                 type="number"
                 id="regularPrice"
-                min="50"
+                min="500"
                 max="10000000"
                 required
                 className="p-3 border border-gray-300 rounded-lg"
