@@ -295,7 +295,7 @@ const Profile = () => {
                   className="text-green-700 
               uppercase"
                 >
-                  Edit
+                  <Link to={`/update-listing/${listing._id}`}>Edit</Link>
                 </button>
               </div>
             </div>
