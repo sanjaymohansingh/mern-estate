@@ -18,8 +18,6 @@ mongoose
 
 const app = express();
 
-const port = process.env.PORT || 5000;
-
 const _dirname = path.resolve();
 
 app.get("/", (req, res) => {
@@ -48,6 +46,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`App Running on Port Number : ${port}`);
+app.listen(5001, () => {
+  console.log(`App Running on Port Number : 5001`);
 });
