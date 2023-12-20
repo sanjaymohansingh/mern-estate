@@ -20,10 +20,6 @@ const app = express();
 
 const _dirname = path.resolve();
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 app.use(express.json());
 app.use(cookieParser());
 app.use("/api/user", userRouter);
